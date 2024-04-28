@@ -36,10 +36,10 @@ const Navbar = () => {
     }
     const navlink=<>
     <NavLink to='/'  className={({isActive})=>isActive?'text-[#221D14]  font-bold mr-8 text-xl':'font-bold mr-8 text-xl'}>Home</NavLink>
-    <NavLink to='/' className={({isActive})=>isActive?'text-[#221D14]  font-bold mr-8 text-xl':'font-bold mr-8 text-xl'}>All Art & craft Items</NavLink>
+    <NavLink to='/art' className={({isActive})=>isActive?'text-[#221D14]  font-bold mr-8 text-xl':'font-bold mr-8 text-xl'}>All Art & craft Items</NavLink>
     <NavLink to='/add' className={({isActive})=>isActive?'text-[#221D14]  font-bold mr-8 text-xl':'font-bold mr-8 text-xl'}>Add Craft Item</NavLink>
     {
-      user ? <NavLink to='/mycard' className={({isActive})=>isActive?'text-[#221D14]  font-bold mr-8 text-xl':'font-bold mr-8 text-xl'}>My Art&Craft List</NavLink>: <> <NavLink to='/login' className={({isActive})=>isActive?'text-[#221D14]  font-bold mr-8 text-xl':'font-bold mr-8 text-xl'}>Login</NavLink> <NavLink to='/register' className={({isActive})=>isActive?'text-[#221D14]  font-bold mr-8 text-xl':'font-bold mr-8 text-xl'}>Register</NavLink> </>
+      user ? <><NavLink to='/mycard' className={({isActive})=>isActive?'text-[#221D14]  font-bold mr-8 text-xl':'font-bold mr-8 text-xl'}>My Art&Craft List</NavLink> <button className="btn ml-6" onClick={handleLogOut}>Log Out</button></>: <> <NavLink to='/login' className={({isActive})=>isActive?'text-[#221D14]  font-bold mr-8 text-xl':'font-bold mr-8 text-xl'}>Login</NavLink> <NavLink to='/register' className={({isActive})=>isActive?'text-[#221D14]  font-bold mr-8 text-xl':'font-bold mr-8 text-xl'}>Register</NavLink>  </>
     }
  
     

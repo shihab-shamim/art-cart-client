@@ -12,6 +12,7 @@ import Item from "../components/Item";
 import MyCard from "../components/MyCard";
 import Update from "../components/Update";
 import Erro from "../components/Erro";
+import ArtCraft from "../components/ArtCraft";
 
 
   const router = createBrowserRouter([
@@ -50,6 +51,10 @@ import Erro from "../components/Erro";
           path:'/update/:id',
           element:<PrivetRoute><Update></Update></PrivetRoute>,
           loader:({params})=>fetch(`http://localhost:5000/add/${params.id}`)
+        },{
+          path:'/art',
+          element:<ArtCraft></ArtCraft>,
+          loader:()=>fetch('http://localhost:5000/add')
         }
       ]
     },
