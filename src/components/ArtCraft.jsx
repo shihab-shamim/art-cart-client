@@ -1,17 +1,11 @@
 import { useLoaderData } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
 import Art from "./Art";
-import { useTypewriter } from "react-simple-typewriter";
+
 
 const ArtCraft = () => {
     const artCraft=useLoaderData()
-    const [typewriter] = useTypewriter({
-        words: [" To Our Shop"],
-        loop: {},
-        typeSpeed: 200,
-        deleteSpeed: 40,
-        
-      });
+    
     return (
         <div>
            

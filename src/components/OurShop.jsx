@@ -6,7 +6,7 @@ import ShopCard from "./ShopCard";
 const OurShop = () => {
   const [products, setProduct] = useState([]);
   useEffect(() => {
-    fetch("../../public/ourshop.json")
+    fetch("/ourshop.json")
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
