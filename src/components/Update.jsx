@@ -6,6 +6,7 @@ import { AuthContext } from "../provider/AuthProvider";
 
 const Update = () => {
     const card=useLoaderData()
+    console.log(card)
     const id=card._id
     console.log(id)
     const {user}=useContext(AuthContext)
@@ -42,7 +43,7 @@ const Update = () => {
    
       console.log(artAdd,'click')
      
-      fetch(`http://localhost:5000/add/${id}`,{
+      fetch(`https://assaiment-server.vercel.app/add/${id}`,{
         method:'PUT',
         headers:{"content-type":"application/json"},
         body:JSON.stringify(artAdd)
