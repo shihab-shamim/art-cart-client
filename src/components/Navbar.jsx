@@ -6,6 +6,7 @@ import 'react-tooltip/dist/react-tooltip.css'
 
 const Navbar = () => {
     const {user,logOut}=useContext(AuthContext)
+    console.log(user)
     const [theme, setTheme] = useState("light");
       useEffect(() => {
         const localTheme = localStorage.getItem("theme");

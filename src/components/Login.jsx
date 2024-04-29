@@ -10,7 +10,7 @@ import Lottie from "lottie-react";
 const Login = () => {
     const location=useLocation()
     const navigate=useNavigate()
-    const {logIn,googleLogIn}=useContext(AuthContext)
+    const {logIn,googleLogIn,gitLogIn}=useContext(AuthContext)
     const handleLogIn=e=>{
         e.preventDefault()
         const form=e.target
@@ -68,7 +68,28 @@ const Login = () => {
 
     }
     const handleGitLogin =e=>{
-        console.log('git click')
+        e.preventDefault()
+        
+        gitLogIn()
+        .then(result=>{
+            console.log(result.user)
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Logged In Success",
+                showConfirmButton: false,
+                timer: 1500
+              });
+              updateProfile(result.user,{
+                displayName:result.user.displayName,photoURL:result.user.photoURL
+                
+              })
+              navigate(location?.state? location.state : '/')
+              location.reload();
+        })
+        .catch(error=>{
+            console.log(error)
+        })
     }
 
 
